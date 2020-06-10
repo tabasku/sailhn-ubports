@@ -1,0 +1,22 @@
+<RCC>
+    <qresource prefix="/">
+    <file>AskStoriesPage.qml</file>
+    <file>BestStoriesPage.qml</file>
+    <file>CommentsPage.qml</file>
+
+    <file>TopStoriesTab.qml</file>
+    <file>ItemDelegate.qml</file>
+    <file>ItemDetailsPage.qml</file>
+    <file>ListItemDelegate.qml</file>
+    <file>StoriesListView.qml</file>
+    <file>NewStoriesPage.qml</file>
+    <file>JobStoriesPage.qml</file>
+    <file>Main.qml</file>
+    <file>Submit.qml</file>
+    <file>TabsList.qml</file>
+    <file>RepliesPage.qml</file>
+    <file>Reply.qml</file>
+    <file>ReplyDelegate.qml</file>
+
+    </qresource>
+</RCC>
