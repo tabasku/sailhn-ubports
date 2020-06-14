@@ -6,15 +6,14 @@ import sailhn.sailhn 1.0
 
 UbuntuListView {
     id: listView
-    anchors.fill: parent
-
+   
     /* amount of space from the above component */
     //anchors.topMargin: units.gu(10)
 
     /* disable the dragging features of the ListModel elements */
     boundsBehavior: Flickable.StopAtBounds
 
-    focus: true
+    //focus: true
     /* set clip:true to prevent that UbuntuListView draw out of his assigned rectangle, default is false */
     clip: true
 
@@ -70,8 +69,8 @@ UbuntuListView {
         id: model
     }
 
-    delegate: ItemDelegate {}
+    delegate: StoryItemDelegate {}
 
-    //VerticalScrollDecorator {}
+        // Add pull to refresh
+
 }
-    

@@ -11,6 +11,23 @@ Page {
     readonly property int maxCommentsForPage: 30
     property int showingCommentsCount: maxCommentsForPage
 
+    header: PageHeader {
+        id: header
+        title: i18n.tr('Replies')
+
+        StyleHints {
+            foregroundColor: UbuntuColors.inkstone
+            backgroundColor: headerBackgroundColor
+            dividerColor: UbuntuColors.ash
+        }
+    }
+
+
+    Rectangle{
+        color: storyBackgroundColor
+        anchors.fill: parent
+    }
+
     Flickable {
         id: replies
         anchors.fill: parent

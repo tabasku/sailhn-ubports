@@ -2,17 +2,7 @@ import QtQuick 2.7
 import QtQuick.Layouts 1.1
 import Ubuntu.Components 1.3
 
-/*
-   This is the first page loaded in the PageStack on application startup
-*/
-Tab {
-    id: topStoriesTab
-
-    TabsList {
-        id: tabsList
-    }
-
-   page: Page {
+Page {
         id: mainPage
         anchors.fill: parent
 
@@ -21,9 +11,9 @@ Tab {
             title: i18n.tr('Top')
 
             StyleHints {
-                foregroundColor: UbuntuColors.inkstone
-                backgroundColor: headerBackgroundColor
-                dividerColor: UbuntuColors.ash
+                //foregroundColor: UbuntuColors.black
+                backgroundColor: "#ff6600"
+                dividerColor: UbuntuColors.slate
             }
 
             leadingActionBar {
@@ -32,20 +22,20 @@ Tab {
             }
 
             trailingActionBar.actions: [
-                Action {
-                    iconName: "add"
-                    text: i18n.tr("Submit")
-                    onTriggered: {
-                        console.log("submit")
-                        //podcastPage.header = searchHeader
-                        //searchField.item.forceActiveFocus()
-                    }
+            Action {
+                iconName: "add"
+                text: i18n.tr("Submit")
+                onTriggered: {
+                    console.log("submit")
+                    //podcastPage.header = searchHeader
+                    //searchField.item.forceActiveFocus()
                 }
-            ]
+            }
+        ]
         }
 
         Rectangle{
-            color: storyBackgroundColor
+            color: "#f6f6ef"
             anchors.fill: parent
         }
 
@@ -103,4 +93,3 @@ Tab {
             listView.stories.loadTopStories();
         }
     }
-}

@@ -18,14 +18,27 @@ Page {
             numberOfSlots: 0
             actions: tabsList.actions
         }
+
+        StyleHints {
+            foregroundColor: UbuntuColors.inkstone
+            backgroundColor: headerBackgroundColor
+            dividerColor: UbuntuColors.ash
+        }
+    }
+
+    Rectangle{
+        color: storyBackgroundColor
+        anchors.fill: parent
     }
 
     StoriesListView {
         id: listView
         pageTitle: "Newest"
-        anchors.fill: parent
-        /* amount of space from the above component */
-        anchors.topMargin: units.gu(15)
+
+        anchors{
+            fill: parent
+            topMargin: header.height + units.gu(0.5)
+        }
 
         /* disable the dragging features of the ListModel elements */
         boundsBehavior: Flickable.StopAtBounds
@@ -38,6 +51,7 @@ Page {
 
     /* to have a scroll bar we ListModel size exceed the page heigth */
     Scrollbar {
+        z: 1
         flickableItem: listView
         align: Qt.AlignTrailing
     }

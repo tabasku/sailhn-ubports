@@ -18,15 +18,23 @@ Page {
             numberOfSlots: 0
             actions: tabsList.actions
         }
+
+        StyleHints {
+            foregroundColor: UbuntuColors.inkstone
+            backgroundColor: headerBackgroundColor
+            dividerColor: UbuntuColors.ash
+        }
     }
 
     StoriesListView {
         id: listView
 
         pageTitle: "Job"
-        anchors.fill: parent
         /* amount of space from the above component */
-        anchors.topMargin: units.gu(15)
+        anchors{
+            fill: parent
+            topMargin: header.height + units.gu(0.5)
+        }
 
         /* disable the dragging features of the ListModel elements */
         boundsBehavior: Flickable.StopAtBounds

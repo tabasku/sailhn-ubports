@@ -12,7 +12,7 @@ Page {
 
     header: PageHeader {
         id: header
-        title: i18n.tr('Best')
+        title: i18n.tr('Show')
 
         leadingActionBar {
             numberOfSlots: 0
@@ -26,9 +26,15 @@ Page {
         }
     }
 
+    Rectangle{
+        color: storyBackgroundColor
+        anchors.fill: parent
+    }
+
     StoriesListView {
         id: listView
-        pageTitle: "Best"
+        pageTitle: "Show"
+
         anchors{
             fill: parent
             topMargin: header.height + units.gu(0.5)
@@ -40,13 +46,12 @@ Page {
         focus: true
         /* set clip:true to prevent that UbuntuListView draw out of his assigned rectangle, default is false */
         clip: true
-
         onRefreshClicked: loadStories()
     }
 
-
     /* to have a scroll bar we ListModel size exceed the page heigth */
     Scrollbar {
+        z: 1
         flickableItem: listView
         align: Qt.AlignTrailing
     }
@@ -54,6 +59,6 @@ Page {
     Component.onCompleted: loadStories();
 
     function loadStories() {
-        listView.stories.loadBestStories();
+        listView.stories.loadShowStories();
     }
 }

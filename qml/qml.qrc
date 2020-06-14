@@ -17,6 +17,9 @@
     <file>RepliesPage.qml</file>
     <file>Reply.qml</file>
     <file>ReplyDelegate.qml</file>
+    <file>StoryItemDelegate.qml</file>
+    <file>StoryPage.qml</file>
+    <file>ShowStoriesPage.qml</file>
 
     </qresource>
 </RCC>

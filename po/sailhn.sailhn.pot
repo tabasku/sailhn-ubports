@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sailhn.sailhn\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-10 19:30+0000\n"
+"POT-Creation-Date: 2020-06-14 11:39+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -23,6 +23,14 @@ msgstr ""
 
 #: ../qml/BestStoriesPage.qml:15 ../qml/TabsList.qml:37
 msgid "Best"
+msgstr ""
+
+#: ../qml/CommentsPage.qml:21
+msgid "Comments"
+msgstr ""
+
+#: ../qml/CommentsPage.qml:32
+msgid "Reply"
 msgstr ""
 
 #: ../qml/ItemDetailsPage.qml:24
@@ -41,40 +49,28 @@ msgstr ""
 msgid "Jobs"
 msgstr ""
 
-#: ../qml/ListItemDelegate.qml:57
-msgid "Name"
-msgstr ""
-
-#: ../qml/ListItemDelegate.qml:62
-msgid "Surname"
-msgstr ""
-
-#: ../qml/ListItemDelegate.qml:67
-msgid "Address"
-msgstr ""
-
-#: ../qml/ListItemDelegate.qml:72
-msgid "City"
-msgstr ""
-
-#: ../qml/ListItemDelegate.qml:77
-msgid "Country"
-msgstr ""
-
 #: ../qml/NewStoriesPage.qml:15 ../qml/TabsList.qml:19
 msgid "Newest"
 msgstr ""
 
-#: ../qml/TabsList.qml:10 ../qml/TopStoriesTab.qml:21
+#: ../qml/RepliesPage.qml:16 ../qml/Reply.qml:10
+msgid "Replies"
+msgstr ""
+
+#: ../qml/ShowStoriesPage.qml:15 ../qml/TabsList.qml:45
+msgid "Show"
+msgstr ""
+
+#: ../qml/StoryPage.qml:11 ../qml/TabsList.qml:10 ../qml/TopStoriesTab.qml:21
 msgid "Top"
 msgstr ""
 
-#: ../qml/TabsList.qml:46
-msgid "Settings"
+#: ../qml/StoryPage.qml:27 ../qml/Submit.qml:11 ../qml/TopStoriesTab.qml:37
+msgid "Submit"
 msgstr ""
 
-#: ../qml/TopStoriesTab.qml:31
-msgid "Submit"
+#: ../qml/TabsList.qml:54
+msgid "Settings"
 msgstr ""
 
 #: sailhn.desktop.in.h:1

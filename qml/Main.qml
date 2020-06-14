@@ -16,6 +16,8 @@ MainView {
     Suru.theme: Suru.System
 
     property string appVersion : "sailhn.project_version"
+    property string headerBackgroundColor: "#ff6600"
+    property string storyBackgroundColor: "#f6f6ef"
 
     width: units.gu(100)
     height: units.gu(75)
@@ -51,6 +53,10 @@ MainView {
 
                     case bestStoriesTab:
                         bestStoriesPage.source = Qt.resolvedUrl("BestStoriesPage.qml")
+                        break;
+
+                    case showStoriesTab:
+                        bestStoriesPage.source = Qt.resolvedUrl("ShowStoriesPage.qml")
                         break;
                 
                     default:
@@ -96,6 +102,19 @@ MainView {
                 page: Loader {
                     id: bestStoriesPage
                     parent: bestStoriesTab
+                    anchors.left: parent.left
+                    anchors.right: parent.right
+                    anchors.bottom: parent.bottom
+                }
+            }
+
+            Tab {
+                id: showStoriesTab
+
+                // Dynamically load/unload the search tab as required
+                page: Loader {
+                    id: showStoriesPage
+                    parent: showStoriesTab
                     anchors.left: parent.left
                     anchors.right: parent.right
                     anchors.bottom: parent.bottom

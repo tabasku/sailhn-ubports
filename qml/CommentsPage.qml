@@ -16,12 +16,42 @@ Page {
     readonly property int maxCommentsForPage: 30
     property int showingCommentsCount: maxCommentsForPage
 
-    //allowedOrientations: Orientation.All
+    header: PageHeader {
+        id: header
+        title: i18n.tr('Comments')
+
+        StyleHints {
+            foregroundColor: UbuntuColors.inkstone
+            backgroundColor: headerBackgroundColor
+            dividerColor: UbuntuColors.ash
+        }
+
+        trailingActionBar.actions: [
+            Action {
+                iconName: "message"
+                text: i18n.tr("Reply")
+                onTriggered: {
+                    console.log("reply")
+                    //podcastPage.header = searchHeader
+                    //searchField.item.forceActiveFocus()
+                }
+            }
+        ]
+    }
+
+    Rectangle{
+        color: storyBackgroundColor
+        anchors.fill: parent
+    }
 
     Flickable {
         id: comments
-        anchors.fill: parent
         contentHeight: column.height
+
+        anchors{
+            fill: parent
+            topMargin: header.height + units.gu(0.5)
+        }
 
     /*        PullDownMenu {
             MenuItem {

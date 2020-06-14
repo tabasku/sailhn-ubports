@@ -40,13 +40,21 @@ ActionList {
                 tabs.selectedTabIndex = 3
             }
         },
+        Action {
+            iconName: "broadcast"
+            text: i18n.tr("Show")
+            enabled: tabs.selectedTab !== showStoriesTab
+            onTriggered: {
+                tabs.selectedTabIndex = 4
+            }
+        },
 
         Action {
             iconName: "settings"
             text: i18n.tr("Settings")
             enabled: tabs.selectedTab !== settingsTab
             onTriggered: {
-                tabs.selectedTabIndex = 4
+                tabs.selectedTabIndex = 5
             }
         }
     ]

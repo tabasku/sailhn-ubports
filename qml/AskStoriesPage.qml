@@ -16,6 +16,12 @@ Page {
             numberOfSlots: 0
             actions: tabsList.actions
         }
+
+        StyleHints {
+            foregroundColor: UbuntuColors.inkstone
+            backgroundColor: headerBackgroundColor
+            dividerColor: UbuntuColors.ash
+        }
     }
 
     StoriesListView {

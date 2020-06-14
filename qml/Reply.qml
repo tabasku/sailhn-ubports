@@ -5,7 +5,22 @@ import QtQuick.Layouts 1.3
 Page {
     property var parentId
 
-    allowedOrientations: Orientation.All
+    header: PageHeader {
+        id: header
+        title: i18n.tr('Replies')
+
+        StyleHints {
+            foregroundColor: UbuntuColors.inkstone
+            backgroundColor: headerBackgroundColor
+            dividerColor: UbuntuColors.ash
+        }
+    }
+
+
+    Rectangle{
+        color: storyBackgroundColor
+        anchors.fill: parent
+    }
 
     Connections {
         target: manager
@@ -25,7 +40,7 @@ Page {
         }
     }
 
-    SilicaFlickable {
+    Flickable {
         anchors.fill: parent
         contentHeight: column.height
 
