@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sailhn.sailhn\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-14 11:39+0000\n"
+"POT-Creation-Date: 2020-06-14 16:57+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,11 +17,11 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../qml/AskStoriesPage.qml:13
+#: ../qml/AskStoriesPage.qml:13 ../qml/TabsList.qml:37
 msgid "Ask"
 msgstr ""
 
-#: ../qml/BestStoriesPage.qml:15 ../qml/TabsList.qml:37
+#: ../qml/BestStoriesPage.qml:15 ../qml/TabsList.qml:55
 msgid "Best"
 msgstr ""
 
@@ -45,7 +45,7 @@ msgstr ""
 msgid "Status"
 msgstr ""
 
-#: ../qml/JobStoriesPage.qml:15 ../qml/TabsList.qml:28
+#: ../qml/JobStoriesPage.qml:15 ../qml/TabsList.qml:46
 msgid "Jobs"
 msgstr ""
 
@@ -57,19 +57,19 @@ msgstr ""
 msgid "Replies"
 msgstr ""
 
-#: ../qml/ShowStoriesPage.qml:15 ../qml/TabsList.qml:45
+#: ../qml/ShowStoriesPage.qml:15 ../qml/TabsList.qml:28
 msgid "Show"
 msgstr ""
 
-#: ../qml/StoryPage.qml:11 ../qml/TabsList.qml:10 ../qml/TopStoriesTab.qml:21
+#: ../qml/StoryPage.qml:11 ../qml/TabsList.qml:10 ../qml/TopStoriesTab.qml:20
 msgid "Top"
 msgstr ""
 
-#: ../qml/StoryPage.qml:27 ../qml/Submit.qml:11 ../qml/TopStoriesTab.qml:37
+#: ../qml/StoryPage.qml:27 ../qml/Submit.qml:11 ../qml/TopStoriesTab.qml:36
 msgid "Submit"
 msgstr ""
 
-#: ../qml/TabsList.qml:54
+#: ../qml/TabsList.qml:64
 msgid "Settings"
 msgstr ""
 

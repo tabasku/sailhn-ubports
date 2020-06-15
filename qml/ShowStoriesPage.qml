@@ -51,7 +51,6 @@ Page {
 
     /* to have a scroll bar we ListModel size exceed the page heigth */
     Scrollbar {
-        z: 1
         flickableItem: listView
         align: Qt.AlignTrailing
     }

@@ -14,7 +14,6 @@ Tab {
 
    page: Page {
         id: mainPage
-        anchors.fill: parent
 
         header: PageHeader {
             id: header
@@ -23,7 +22,7 @@ Tab {
             StyleHints {
                 foregroundColor: UbuntuColors.inkstone
                 backgroundColor: headerBackgroundColor
-                dividerColor: UbuntuColors.ash
+                dividerColor: "transparent"
             }
 
             leadingActionBar {
@@ -57,42 +56,21 @@ Tab {
                 fill: parent
                 topMargin: header.height + units.gu(0.5)
             }
-            //anchors.fill: parent
-            //anchors.top: header.bottom
-            /* amount of space from the above component */
-            //anchors.topMargin: units.gu(15)
 
             /* disable the dragging features of the ListModel elements */
             boundsBehavior: Flickable.StopAtBounds
 
-            focus: true
-            /* set clip:true to prevent that UbuntuListView draw out of his assigned rectangle, default is false */
-            clip: true
+            onRefreshClicked: loadStories()
 
-            PullToRefresh {
-                //refreshing: listView.model.status === XmlListModel.Loading
-                onRefresh: listView.refreshClicked()
-            }
+            // pullToRefresh {
+            //     enabled: true
+            //     refreshing: false
+            //     //refreshing: listView.model.status === XmlListModel.Loading
+            //     onRefresh: loadStories()
+            // }
         }
 
-        // /* to have a scroll bar we ListModel size exceed the page heigth */
-        // Scrollbar {
-        //     flickableItem: listView
-        //     align: Qt.AlignTrailing
-        //     Layout.fillHeight: true
-        //     Layout.fillWidth: true
-        //     // Layout.alignment: Qt.AlignTop
-        //     anchors {
-        //     //     horizontalCenter: parent.horizontalCenter
-        //     //     top: header.bottom
-        //     //     topMargin: units.gu(5)
-        //     //     bottomMargin: units.gu(5)
-        //          fill:parent
-        //    }
-        // }
-        // Scrollbar for categoryColumnFlickable
         Scrollbar {
-            z: 1
             flickableItem: listView
             align: Qt.AlignTrailing
         }

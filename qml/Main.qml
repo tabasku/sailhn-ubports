@@ -19,7 +19,7 @@ MainView {
     property string headerBackgroundColor: "#ff6600"
     property string storyBackgroundColor: "#f6f6ef"
 
-    width: units.gu(100)
+    width: units.gu(45)
     height: units.gu(75)
 
     PageStack {
@@ -47,6 +47,14 @@ MainView {
                         newStoriesPage.source = Qt.resolvedUrl("NewStoriesPage.qml")
                         break;
 
+                    case showStoriesTab:
+                        showStoriesPage.source = Qt.resolvedUrl("ShowStoriesPage.qml")
+                        break;
+
+                    case askStoriesTab:
+                        askStoriesPage.source = Qt.resolvedUrl("AskStoriesPage.qml")
+                        break;
+
                     case jobStoriesTab:
                         jobStoriesPage.source = Qt.resolvedUrl("JobStoriesPage.qml")
                         break;
@@ -54,11 +62,7 @@ MainView {
                     case bestStoriesTab:
                         bestStoriesPage.source = Qt.resolvedUrl("BestStoriesPage.qml")
                         break;
-
-                    case showStoriesTab:
-                        bestStoriesPage.source = Qt.resolvedUrl("ShowStoriesPage.qml")
-                        break;
-                
+                                    
                     default:
                         break;
                 }
@@ -76,6 +80,32 @@ MainView {
                 page: Loader {
                     id: newStoriesPage
                     parent: newStoriesTab
+                    anchors.left: parent.left
+                    anchors.right: parent.right
+                    anchors.bottom: parent.bottom
+                }
+            }
+
+            Tab {
+                id: showStoriesTab
+
+                // Dynamically load/unload the search tab as required
+                page: Loader {
+                    id: showStoriesPage
+                    parent: showStoriesTab
+                    anchors.left: parent.left
+                    anchors.right: parent.right
+                    anchors.bottom: parent.bottom
+                }
+            }
+
+            Tab {
+                id: askStoriesTab
+
+                // Dynamically load/unload the search tab as required
+                page: Loader {
+                    id: askStoriesPage
+                    parent: askStoriesTab
                     anchors.left: parent.left
                     anchors.right: parent.right
                     anchors.bottom: parent.bottom
@@ -102,19 +132,6 @@ MainView {
                 page: Loader {
                     id: bestStoriesPage
                     parent: bestStoriesTab
-                    anchors.left: parent.left
-                    anchors.right: parent.right
-                    anchors.bottom: parent.bottom
-                }
-            }
-
-            Tab {
-                id: showStoriesTab
-
-                // Dynamically load/unload the search tab as required
-                page: Loader {
-                    id: showStoriesPage
-                    parent: showStoriesTab
                     anchors.left: parent.left
                     anchors.right: parent.right
                     anchors.bottom: parent.bottom

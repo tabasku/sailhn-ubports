@@ -26,6 +26,11 @@ Page {
         }
     }
 
+    Rectangle{
+        color: storyBackgroundColor
+        anchors.fill: parent
+    }
+
     StoriesListView {
         id: listView
         pageTitle: "Best"

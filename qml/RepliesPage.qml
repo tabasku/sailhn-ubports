@@ -18,10 +18,9 @@ Page {
         StyleHints {
             foregroundColor: UbuntuColors.inkstone
             backgroundColor: headerBackgroundColor
-            dividerColor: UbuntuColors.ash
+            dividerColor: "transparent"
         }
     }
-
 
     Rectangle{
         color: storyBackgroundColor
@@ -30,8 +29,12 @@ Page {
 
     Flickable {
         id: replies
-        anchors.fill: parent
         contentHeight: column.height
+
+        anchors{
+            fill: parent
+            topMargin: header.height
+        }
 
         /*
         PullDownMenu {
@@ -69,15 +72,10 @@ Page {
 
         Column {
             id: column
-            x: units.gu(2)
-            width: parent.width - units.gu(2) * 2
-            spacing: units.gu(2)
-
-            /*
-            SectionHeader {
-                text: qsTr("Replies")
-            }
-            */
+            //x: units.gu(2)
+            width: parent.width
+            //width: parent.width - units.gu(2) * 2
+            //spacing: units.gu(0.5)
 
             Repeater {
 

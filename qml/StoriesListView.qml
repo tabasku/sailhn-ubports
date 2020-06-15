@@ -9,11 +9,13 @@ UbuntuListView {
    
     /* amount of space from the above component */
     //anchors.topMargin: units.gu(10)
+    highlightFollowsCurrentItem: false
+    highlight: Rectangle { color: "transparent"}
 
     /* disable the dragging features of the ListModel elements */
     boundsBehavior: Flickable.StopAtBounds
 
-    //focus: true
+    focus: true
     /* set clip:true to prevent that UbuntuListView draw out of his assigned rectangle, default is false */
     clip: true
 
@@ -71,6 +73,11 @@ UbuntuListView {
 
     delegate: StoryItemDelegate {}
 
-        // Add pull to refresh
+    pullToRefresh {
+        enabled: true
+        //refreshing: false
+        //refreshing: listView.model.status === XmlListModel.Loading
+        onRefresh: listView.refreshClicked()
+    }
 
 }

@@ -23,7 +23,7 @@ Page {
         StyleHints {
             foregroundColor: UbuntuColors.inkstone
             backgroundColor: headerBackgroundColor
-            dividerColor: UbuntuColors.ash
+            //dividerColor: "transparent"
         }
 
         trailingActionBar.actions: [
@@ -31,9 +31,7 @@ Page {
                 iconName: "message"
                 text: i18n.tr("Reply")
                 onTriggered: {
-                    console.log("reply")
-                    //podcastPage.header = searchHeader
-                    //searchField.item.forceActiveFocus()
+                    pageStack.push(Qt.resolvedUrl("Reply.qml"), {parentId: parentId})
                 }
             }
         ]
@@ -50,7 +48,7 @@ Page {
 
         anchors{
             fill: parent
-            topMargin: header.height + units.gu(0.5)
+            topMargin: header.height + units.gu(1)
         }
 
     /*        PullDownMenu {
@@ -95,18 +93,16 @@ Page {
 
         Column {
             id: column
-            x: units.gu(2)
-            width: parent.width - units.gu(2) * 2
-            spacing: units.gu(2)
-
-            // SectionHeader {
-            //     text: qsTr("Comments")
-            // }
+            //x: units.gu(1)
+            width: parent.width - units.gu(1) * 2
+            spacing: units.gu(1)
+            padding:  units.gu(1)
 
             Label {
                 width: parent.width
                 text: title
                 color: theme.palette.highlighted.baseText
+                textSize: Label.Medium
                 //font.pixelSize: Theme.fontSizeMedium
                 wrapMode: Text.Wrap
             }
@@ -118,7 +114,7 @@ Page {
                 text: "<style>a:link{color: " + theme.palette.highlighted.baseText + ";}</style>" + itemText
                 color: theme.palette.normal.baseText
                 //font.pixelSize: Theme.fontSizeMedium
-                wrapMode: Text.Wrap
+                wrapMode: Text.WordWrap
 
                 onLinkActivated: {
                     console.log("Opening external browser: " + link);
@@ -128,10 +124,11 @@ Page {
 
             // Workaround for Label that does not provide onClick?
             Text {
-                width: parent.implicitWidth
+                //width: parent.implicitWidth //craches with padding
+                width:parent.width
                 visible: (url && !(/^\s*$/.test(url)))
                 textFormat: Text.RichText
-                //font.pixelSize: Theme.fontSizeSmall
+
                 wrapMode: Text.WrapAnywhere
                 text: {
                     var txt = "<style>a:link{color: " + theme.palette.highlighted.baseText + ";}</style>";
@@ -148,8 +145,8 @@ Page {
             Label {
                 width: parent.width
                 color: theme.palette.highlighted.baseText
-                //font.pixelSize: Theme.fontSizeSmall
-                horizontalAlignment: Text.AlignRight
+                textSize: Label.Medium
+                //horizontalAlignment: Text.AlignRight
                 text: by + " - " + Qt.formatDateTime(time, "ddd, hh:mm");
             }
 
@@ -158,11 +155,11 @@ Page {
                 model: NewsModel {
                     id: model
 
-                    /*onRowsInserted: {
-                        if (kids.length > showingCommentsCount) {
-                            comments.pushUpMenu.visible = true;
-                        }
-                    }*/
+                    // onRowsInserted: {
+                    //     if (kids.length > showingCommentsCount) {
+                    //         comments.pushUpMenu.visible = true;
+                    //     }
+                    // }
                 }
 
                 delegate: ReplyDelegate {}
@@ -173,7 +170,7 @@ Page {
 
     Component.onCompleted: {
         loadComments();
-        reply.enabled = manager.isAuthenticated();
+        //reply.enabled = manager.isAuthenticated();
     }
 
     /*

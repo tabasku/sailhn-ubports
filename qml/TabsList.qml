@@ -24,11 +24,29 @@ ActionList {
         },
 
         Action {
+            iconName: "broadcast"
+            text: i18n.tr("Show")
+            enabled: tabs.selectedTab !== showStoriesTab
+            onTriggered: {
+                tabs.selectedTabIndex = 2
+            }
+        },
+
+        Action {
+            iconName: "dialog-question-symbolic"
+            text: i18n.tr("Ask")
+            enabled: tabs.selectedTab !== askStoriesTab
+            onTriggered: {
+                tabs.selectedTabIndex = 3
+            }
+        },
+
+        Action {
             iconName: "system-users-symbolic"
             text: i18n.tr("Jobs")
             enabled: tabs.selectedTab !== jobStoriesTab
             onTriggered: {
-                tabs.selectedTabIndex = 2
+                tabs.selectedTabIndex = 4
             }
         },
 
@@ -37,15 +55,7 @@ ActionList {
             text: i18n.tr("Best")
             enabled: tabs.selectedTab !== bestStoriesTab
             onTriggered: {
-                tabs.selectedTabIndex = 3
-            }
-        },
-        Action {
-            iconName: "broadcast"
-            text: i18n.tr("Show")
-            enabled: tabs.selectedTab !== showStoriesTab
-            onTriggered: {
-                tabs.selectedTabIndex = 4
+                tabs.selectedTabIndex = 5
             }
         },
 
@@ -54,7 +64,7 @@ ActionList {
             text: i18n.tr("Settings")
             enabled: tabs.selectedTab !== settingsTab
             onTriggered: {
-                tabs.selectedTabIndex = 5
+                tabs.selectedTabIndex = 6
             }
         }
     ]

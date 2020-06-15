@@ -3,17 +3,21 @@ import Ubuntu.Components 1.3
 import QtQuick.Layouts 1.3
 
 ListItem {
-    height: contentItem.childrenRect.height
+    height: contentItem.childrenRect.height + units.gu(1)
+    width: parent.width
+    selected: false
+    swipeEnabled: false
 
     Column {
         width: parent.width
+        //spacing: units.gu(0.5)
+        //padding: units.gu(0.5)
 
         Text {
             width: parent.width
             textFormat: Text.RichText
             text: "<style>a:link{color: " + theme.palette.highlighted.baseText + ";}</style>" + itemText
             color: theme.palette.highlighted.baseText
-            //font.pixelSize: Theme.fontSizeMedium
             wrapMode: Text.Wrap
 
             onLinkActivated: {
@@ -25,8 +29,6 @@ ListItem {
         Label {
             width: parent.width
             color: theme.palette.highlighted.baseText
-            //font.pixelSize: Theme.fontSizeSmall
-            horizontalAlignment: Text.AlignRight
 
             text: {
                 var txt = by;
