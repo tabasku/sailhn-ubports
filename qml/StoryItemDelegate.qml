@@ -7,6 +7,7 @@ ListItem {
   width: parent.width
   selected: false
   swipeEnabled: false
+  divider.visible : false
 
   Column {
     width: parent.width - units.gu(1) * 2
